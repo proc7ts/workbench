@@ -69,7 +69,7 @@ export namespace Workload {
      *
      * @param allotment - Work allotment.
      */
-    start(allotment: Allotment): TWork;
+    start(allotment: Allotment<TWork>): TWork;
 
   }
 
@@ -77,13 +77,20 @@ export namespace Workload {
    * Work allotment.
    *
    * Provided by workbench to {@link Allocator workload allocator} to allocate the work.
+   *
+   * @typeParam TWork - A work type performed by target workload.
    */
-  export interface Allotment extends SupplyPeer {
+  export interface Allotment<TWork> extends SupplyPeer {
 
     /**
-     * The workbench the work is allocated for.
+     * A workbench the work is allocated within.
      */
     readonly workbench: Workbench;
+
+    /**
+     * A workload to allocate the work for.
+     */
+    readonly workload: Workload<TWork>;
 
     /**
      * The work allotment supply.

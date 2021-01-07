@@ -80,6 +80,7 @@ export class Workbench$ implements SupplyPeer {
 
     return setWork(workload.allocator.start({
       workbench: this.workbench,
+      workload,
       supply,
       async run<TResult>(task: Workbench.Task<TResult>) {
         return await runTask(task);
