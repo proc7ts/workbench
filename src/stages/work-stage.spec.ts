@@ -1,4 +1,4 @@
-import { asis, newPromiseResolver } from '@proc7ts/primitives';
+import { asis, newPromiseResolver, noop } from '@proc7ts/primitives';
 import { WorkDoneError } from '../work-done-error';
 import { Workbench } from '../workbench';
 import { WorkStage } from './work-stage';
@@ -141,6 +141,18 @@ describe('WorkStage', () => {
     starter2.resolve();
     await promise;
     expect(results).toEqual([1, 2, 3]);
+  });
+  it('rejects new tasks after stage completion', async () => {
+
+    const work = workbench.work(stage1);
+
+    work.supply.off();
+
+    const error: WorkDoneError = await work.run(noop).catch(asis);
+
+    expect(error).toBeInstanceOf(WorkDoneError);
+    expect(error.workload).toBe(stage1);
+    expect(error.work).toBe(work);
   });
 
   describe('workName', () => {
