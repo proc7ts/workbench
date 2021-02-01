@@ -26,9 +26,7 @@ export class Workbench$ implements SupplyPeer {
       this.work = workload => {
         throw new WorkDoneError(workload, undefined, reason, 'The workbench is stopped');
       };
-    })
-        .needs(supply)
-        .cuts(supply);
+    }).as(supply);
 
     this._run = run ? run.bind(options) : Workbench$run;
   }
