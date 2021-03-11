@@ -1,5 +1,6 @@
-import type { Supply } from '@proc7ts/primitives';
-import { asis, neverSupply, newPromiseResolver } from '@proc7ts/primitives';
+import { asis, newPromiseResolver } from '@proc7ts/primitives';
+import type { Supply } from '@proc7ts/supply';
+import { neverSupply } from '@proc7ts/supply';
 import { WorkDoneError } from './work-done-error';
 import { Workbench } from './workbench';
 import { Workload } from './workload';

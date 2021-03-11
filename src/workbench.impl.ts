@@ -1,4 +1,5 @@
-import { alwaysSupply, noop, Supply, SupplyPeer } from '@proc7ts/primitives';
+import { noop } from '@proc7ts/primitives';
+import { alwaysSupply, Supply, SupplyPeer } from '@proc7ts/supply';
 import { WorkDoneError } from './work-done-error';
 import type { Workbench } from './workbench';
 import type { Workload } from './workload';

@@ -1,4 +1,4 @@
-import type { Supply, SupplyPeer } from '@proc7ts/primitives';
+import type { Supply, SupplyPeer } from '@proc7ts/supply';
 import { Workbench$, Workbench$impl__symbol } from './workbench.impl';
 import type { Workload } from './workload';
 
