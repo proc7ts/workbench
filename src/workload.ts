@@ -1,4 +1,4 @@
-import type { Supply, SupplyPeer } from '@proc7ts/primitives';
+import type { Supply, SupplyPeer } from '@proc7ts/supply';
 import type { Workbench } from './workbench';
 
 /**

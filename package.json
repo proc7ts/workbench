@@ -27,7 +27,8 @@
     "require": "./dist/workbench.cjs"
   },
   "dependencies": {
-    "@proc7ts/primitives": "^1.8.1"
+    "@proc7ts/primitives": "^1.8.1",
+    "@proc7ts/supply": "^1.0.0-dev.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
