@@ -27,7 +27,7 @@
     "require": "./dist/workbench.cjs"
   },
   "dependencies": {
-    "@proc7ts/primitives": "^2.0.0",
+    "@proc7ts/primitives": "^2.1.0",
     "@proc7ts/supply": "^1.0.0"
   },
   "devDependencies": {
