@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { asis, newPromiseResolver, noop } from '@proc7ts/primitives';
 import { WorkDoneError } from '../work-done-error';
 import { Workbench } from '../workbench';
