@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { asis, newPromiseResolver } from '@proc7ts/primitives';
 import type { Supply } from '@proc7ts/supply';
 import { neverSupply } from '@proc7ts/supply';
@@ -129,7 +130,7 @@ describe('Workbench', () => {
   });
   it('rejects new work after closing workbench', () => {
     workbench.supply.off();
-    expect(() => workbench.work(workload)).toThrow(WorkDoneError);
+    expect(() => workbench.work(workload)).toThrow(WorkDoneError as any);
   });
   it('custom supply closes workbench', () => {
 
@@ -137,6 +138,6 @@ describe('Workbench', () => {
 
     workbench = new Workbench({ supply });
 
-    expect(() => workbench.work(workload)).toThrow(WorkDoneError);
+    expect(() => workbench.work(workload)).toThrow(WorkDoneError as any);
   });
 });
