@@ -85,10 +85,10 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="workstage.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="workstage.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="workstage.html#allocator" class="tsd-kind-icon">allocator</a></li>
@@ -107,27 +107,32 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Work<wbr>Stage<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, allocator<span class="tsd-signature-symbol">?: </span><a href="../interfaces/workstage.allocator.html" class="tsd-signature-type" data-tsd-kind="Interface">Allocator</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="workstage.html" class="tsd-signature-type" data-tsd-kind="Class">WorkStage</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="workload.html">Workload</a>.<a href="workload.html#constructor">constructor</a></p>
+								<p>Overrides <a href="workload.html">Workload</a>.<a href="workload.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/d3365a9/src/stages/work-stage.ts#L8">proc7ts/workbench/src/stages/work-stage.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/757e53f/src/stages/work-stage.ts#L8">proc7ts/workbench/src/stages/work-stage.ts:8</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructs a workload.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>allocator: <a href="../interfaces/workstage.allocator.html" class="tsd-signature-type" data-tsd-kind="Interface">Allocator</a><span class="tsd-signature-symbol"> = ...</span></h5>
+									<h5>allocator: <a href="../interfaces/workstage.allocator.html" class="tsd-signature-type" data-tsd-kind="Interface">Allocator</a><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="workstage.html" class="tsd-signature-type" data-tsd-kind="Class">WorkStage</a></h4>
@@ -135,7 +140,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="allocator" class="tsd-anchor"></a>
@@ -144,7 +149,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="workload.html">Workload</a>.<a href="workload.html#allocator">allocator</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/d3365a9/src/workload.ts#L24">proc7ts/workbench/src/workload.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/757e53f/src/workload.ts#L24">proc7ts/workbench/src/workload.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -160,7 +165,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="workload.html">Workload</a>.<a href="workload.html#name">name</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/d3365a9/src/workload.ts#L19">proc7ts/workbench/src/workload.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/757e53f/src/workload.ts#L19">proc7ts/workbench/src/workload.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -183,7 +188,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="workload.html">Workload</a>.<a href="workload.html#tostring">toString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/d3365a9/src/stages/work-stage.ts#L39">proc7ts/workbench/src/stages/work-stage.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/757e53f/src/stages/work-stage.ts#L39">proc7ts/workbench/src/stages/work-stage.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -201,9 +206,15 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="workload.html">Workload</a>.<a href="workload.html#workname">workName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/d3365a9/src/stages/work-stage.ts#L35">proc7ts/workbench/src/stages/work-stage.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/proc7ts/workbench/blob/757e53f/src/stages/work-stage.ts#L35">proc7ts/workbench/src/stages/work-stage.ts:35</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Builds a human-readable name of the work performed by this workload.</p>
+								</div>
+								<p>This is used e.g. to construct a default error message for <a href="workdoneerror.html">WorkDoneError</a>.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -234,7 +245,7 @@
 					<li class="current tsd-kind-class">
 						<a href="workstage.html" class="tsd-kind-icon">Work<wbr>Stage</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="workstage.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -274,7 +285,6 @@
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 			</ul>
 			<ul class="tsd-legend">
