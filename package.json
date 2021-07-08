@@ -24,7 +24,7 @@
   "exports": "./dist/workbench.js",
   "dependencies": {
     "@proc7ts/primitives": "^3.0.2",
-    "@proc7ts/supply": "^1.2.2"
+    "@proc7ts/supply": "^1.2.3"
   },
   "devDependencies": {
     "@jest/globals": "^27.0.6",
