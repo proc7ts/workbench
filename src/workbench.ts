@@ -75,7 +75,7 @@ export namespace Workbench {
      *
      * A new one will be created when omitted.
      */
-    readonly supply?: Supply;
+    readonly supply?: Supply | undefined;
 
     /**
      * Runs the given task.

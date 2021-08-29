@@ -46,7 +46,7 @@ export namespace WorkStage {
 
   export interface Allocator {
 
-    readonly after?: WorkStage;
+    readonly after?: WorkStage | undefined;
 
     start?(work: Work): void | PromiseLike<unknown>;
 
