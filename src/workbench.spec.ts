@@ -98,6 +98,7 @@ describe('Workbench', () => {
     const work = workbench.work(workload);
     const error = await work.run(() => {
       work.supply.off();
+
       return 1;
     }).catch(asis);
 

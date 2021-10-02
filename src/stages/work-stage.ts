@@ -149,6 +149,7 @@ class WorkStageRunner {
                 dep,
                 () => {
                   resolve();
+
                   return this._whenAllDone;
                 },
             )
