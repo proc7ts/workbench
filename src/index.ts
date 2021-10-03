@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Module @proc7ts/workbench
+ * @module @proc7ts/workbench
  */
 export * from './stages';
 export * from './work-done-error';
