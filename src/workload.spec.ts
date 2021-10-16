@@ -12,13 +12,13 @@ describe('Workload', () => {
 
   describe('workName', () => {
     it('contains work name', () => {
-      expect(workload.workName()).toEqual('The work of test');
+      expect(workload.workName()).toBe('The work of test');
     });
   });
 
   describe('toString', () => {
     it('contains workload name', () => {
-      expect(workload.toString()).toEqual('Workload(test)');
+      expect(workload.toString()).toBe('Workload(test)');
     });
   });
 });
