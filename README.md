@@ -1,12 +1,11 @@
-Workbench
-=========
+# Workbench
 
 [![NPM][npm-image]][npm-url]
 [![Build Status][build-status-img]][build-status-link]
 [![Code Quality][quality-img]][quality-link]
 [![Coverage][coverage-img]][coverage-link]
 [![GitHub Project][github-image]][github-url]
-[![API Documentation][api-docs-image]][API documentation]
+[![API Documentation][api-docs-image]][api documentation]
 
 A workbench for coordinated workloads. See the [API documentation].
 
@@ -21,4 +20,4 @@ A workbench for coordinated workloads. See the [API documentation].
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
 [github-url]: https://github.com/proc7ts/workbench
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
-[API documentation]: https://proc7ts.github.io/workbench/ 
+[api documentation]: https://proc7ts.github.io/workbench/

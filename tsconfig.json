@@ -12,15 +12,11 @@
     "importHelpers": true,
     "importsNotUsedAsValues": "error",
     "noEmitHelpers": true,
-    "lib": [
-      "ES2019"
-    ],
+    "lib": ["ES2019"],
     "types": [],
     "outDir": "target/js",
     "sourceMap": true,
     "newLine": "LF"
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }
