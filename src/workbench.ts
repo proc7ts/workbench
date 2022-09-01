@@ -50,24 +50,22 @@ export class Workbench implements SupplyPeer {
 }
 
 export namespace Workbench {
-
   /**
    * A task to run by workbench.
    *
    * @typeParam TResult - A type of task result.
    */
   export type Task<TResult> =
-  /**
-   * @returns A task result evaluated synchronously, or a promise-like instance resolved to asynchronously evaluated
-   * result.
-   */
-      (this: void) => TResult | PromiseLike<TResult>;
+    /**
+     * @returns A task result evaluated synchronously, or a promise-like instance resolved to asynchronously evaluated
+     * result.
+     */
+    (this: void) => TResult | PromiseLike<TResult>;
 
   /**
    * Workbench construction options.
    */
   export interface Options {
-
     /**
      * Workbench supply to use.
      *
@@ -88,8 +86,10 @@ export namespace Workbench {
      * @param work - The work instance the task is part of.
      * @param workload - The workload the task is part of.
      */
-    run?<TResult, TWork>(task: Task<TResult>, work: TWork, workload: Workload<TWork>): Promise<TResult>;
-
+    run?<TResult, TWork>(
+      task: Task<TResult>,
+      work: TWork,
+      workload: Workload<TWork>,
+    ): Promise<TResult>;
   }
-
 }

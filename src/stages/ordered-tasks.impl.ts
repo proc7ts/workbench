@@ -8,11 +8,9 @@ export class OrderedTasks {
 
   private readonly _queues = new Map<Workload<unknown>, TaskQueue>();
 
-  constructor(private readonly _allotment: Workload.Allotment<OrderedTasks>) {
-  }
+  constructor(private readonly _allotment: Workload.Allotment<OrderedTasks>) {}
 
   runAfter<TResult>(workload: Workload<unknown>, task: Workbench.Task<TResult>): Promise<TResult> {
-
     let queue = this._queues.get(workload);
 
     if (!queue) {
@@ -34,21 +32,21 @@ class TaskQueue {
    */
   private readonly _tasks: TaskQueueEntry<unknown>[] = [];
 
-  constructor(readonly _allotment: Workload.Allotment<OrderedTasks>) {
-  }
+  constructor(readonly _allotment: Workload.Allotment<OrderedTasks>) {}
 
   enqueue<TResult>(task: Workbench.Task<TResult>): Promise<TResult> {
     return new Promise(resolve => {
-
       const entry: TaskQueueEntry<TResult> = {
         task,
         run: () => {
-          resolve(this._allotment.run(task).finally(() => {
-            // Remove from the queue.
-            this._tasks.shift();
-            // Run next.
-            this._runNext();
-          }));
+          resolve(
+            this._allotment.run(task).finally(() => {
+              // Remove from the queue.
+              this._tasks.shift();
+              // Run next.
+              this._runNext();
+            }),
+          );
         },
       };
 
@@ -63,7 +61,6 @@ class TaskQueue {
   }
 
   private _runNext(): void {
-
     const [first] = this._tasks;
 
     if (first) {

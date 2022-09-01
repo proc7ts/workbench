@@ -14,12 +14,11 @@ export class WorkDoneError<TWork = unknown> extends TypeError {
    * @param message - Custom error message.
    */
   constructor(
-      readonly workload: Workload<TWork>,
-      readonly work: TWork | undefined,
-      readonly reason: unknown,
-      message = workload.workName(work) + (reason !== undefined
-          ? ` already terminated (${reason})`
-          : ' already done'),
+    readonly workload: Workload<TWork>,
+    readonly work: TWork | undefined,
+    readonly reason: unknown,
+    message = workload.workName(work)
+      + (reason !== undefined ? ` already terminated (${reason})` : ' already done'),
   ) {
     super(message);
   }

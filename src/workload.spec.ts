@@ -3,7 +3,6 @@ import { noop } from '@proc7ts/primitives';
 import { Workload } from './workload';
 
 describe('Workload', () => {
-
   let workload: Workload<void>;
 
   beforeEach(() => {

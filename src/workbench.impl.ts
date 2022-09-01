@@ -7,7 +7,7 @@ import type { Workload } from './workload';
 /**
  * @internal
  */
-export const Workbench$impl__symbol = (/*#__PURE__*/ Symbol('Workbench.impl'));
+export const Workbench$impl__symbol = /*#__PURE__*/ Symbol('Workbench.impl');
 
 /**
  * @internal
@@ -19,7 +19,6 @@ export class Workbench$ implements SupplyPeer {
   private readonly _run: Required<Workbench.Options>['run'];
 
   constructor(readonly workbench: Workbench, options: Workbench.Options) {
-
     const { supply = alwaysSupply(), run } = options;
 
     this.supply = new Supply(reason => {
@@ -39,10 +38,9 @@ export class Workbench$ implements SupplyPeer {
 
     let ensureWorking: () => void = noop;
     const runWorkTask = async <TResult>(
-        work: TWork,
-        task: Workbench.Task<TResult>,
+      work: TWork,
+      task: Workbench.Task<TResult>,
     ): Promise<TResult> => {
-
       const result = await this._run(task, work, workload);
 
       ensureWorking();
@@ -77,22 +75,24 @@ export class Workbench$ implements SupplyPeer {
       this._works.delete(workload);
     });
 
-    return setWork(workload.allocator.start({
-      workbench: this.workbench,
-      workload,
-      supply,
-      async run<TResult>(task: Workbench.Task<TResult>) {
-        return await runTask(task);
-      },
-    }));
+    return setWork(
+      workload.allocator.start({
+        workbench: this.workbench,
+        workload,
+        supply,
+        async run<TResult>(task: Workbench.Task<TResult>) {
+          return await runTask(task);
+        },
+      }),
+    );
   }
 
 }
 
 async function Workbench$run<TResult, TWork>(
-    task: Workbench.Task<TResult>,
-    _work: TWork,
-    _workload: Workload<TWork>,
+  task: Workbench.Task<TResult>,
+  _work: TWork,
+  _workload: Workload<TWork>,
 ): Promise<TResult> {
   return await task();
 }

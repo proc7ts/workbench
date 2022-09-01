@@ -54,7 +54,6 @@ export class Workload<TWork> {
 }
 
 export namespace Workload {
-
   /**
    * Work allocator.
    *
@@ -63,14 +62,12 @@ export namespace Workload {
    * @typeParam TWork - A work type performed by target workload.
    */
   export interface Allocator<TWork> {
-
     /**
      * Starts the work.
      *
      * @param allotment - Work allotment.
      */
     start(allotment: Allotment<TWork>): TWork;
-
   }
 
   /**
@@ -81,7 +78,6 @@ export namespace Workload {
    * @typeParam TWork - A work type performed by target workload.
    */
   export interface Allotment<TWork> extends SupplyPeer {
-
     /**
      * A workbench the work is allocated within.
      */
@@ -109,7 +105,5 @@ export namespace Workload {
      * @returns A promise resolved to task result, or rejected if the work is {@link supply disposed} already.
      */
     run<TResult>(task: Workbench.Task<TResult>): Promise<TResult>;
-
   }
-
 }

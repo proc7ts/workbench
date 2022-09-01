@@ -7,7 +7,6 @@ import { Workbench } from './workbench';
 import { Workload } from './workload';
 
 describe('Workbench', () => {
-
   let workbench: Workbench;
 
   beforeEach(() => {
@@ -35,18 +34,15 @@ describe('Workbench', () => {
   });
 
   it('runs task', async () => {
-
     const work = workbench.work(workload);
 
     expect(await work.run(() => 13)).toBe(13);
   });
   it('runs task scheduled while starting the work', async () => {
-
     const result = newPromiseResolver<number>();
 
     workload = new Workload('test2', {
       start(allotment) {
-
         const work: TestWork = {
           supply: allotment.supply,
           run(task) {
@@ -65,12 +61,13 @@ describe('Workbench', () => {
     expect(await result.promise()).toBe(13);
   });
   it('runs tasks by custom method', async () => {
-
-    const run = jest.fn(async <TResult, TWork>(
+    const run = jest.fn(
+      async <TResult, TWork>(
         task: Workbench.Task<TResult>,
         _work: TWork,
         _workload: Workload<TWork>,
-    ): Promise<TResult> => await task());
+      ): Promise<TResult> => await task(),
+    );
 
     workbench = new Workbench({
       run: run as Workbench.Options['run'],
@@ -82,7 +79,6 @@ describe('Workbench', () => {
     expect(run).toHaveBeenCalledWith(expect.any(Function), work, workload);
   });
   it('rejects new tasks after work disposal', async () => {
-
     const work = workbench.work(workload);
 
     work.supply.off('reason');
@@ -94,20 +90,20 @@ describe('Workbench', () => {
     expect(error.work).toBe(work);
   });
   it('fails to complete the task after work disposal', async () => {
-
     const work = workbench.work(workload);
-    const error = await work.run(() => {
-      work.supply.off();
+    const error = await work
+      .run(() => {
+        work.supply.off();
 
-      return 1;
-    }).catch(asis);
+        return 1;
+      })
+      .catch(asis);
 
     expect(error).toBeInstanceOf(WorkDoneError);
     expect(error.workload).toBe(workload);
     expect(error.work).toBe(work);
   });
   it('rejects new tasks after closing workbench', async () => {
-
     const work = workbench.work(workload);
 
     workbench.supply.off('reason');
@@ -122,7 +118,6 @@ describe('Workbench', () => {
     expect(workbench.work(workload)).toBe(workbench.work(workload));
   });
   it('restarts the work after cutting off', () => {
-
     const work = workbench.work(workload);
 
     work.supply.off();
@@ -134,7 +129,6 @@ describe('Workbench', () => {
     expect(() => workbench.work(workload)).toThrow(WorkDoneError as any);
   });
   it('custom supply closes workbench', () => {
-
     const supply = neverSupply();
 
     workbench = new Workbench({ supply });
