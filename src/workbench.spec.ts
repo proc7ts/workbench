@@ -76,7 +76,11 @@ describe('Workbench', () => {
     const work = workbench.work(workload);
 
     expect(await work.run(() => 13)).toBe(13);
-    expect(run).toHaveBeenCalledWith(expect.any(Function), work, workload);
+    expect(run).toHaveBeenCalledWith(
+      expect.any(Function) as unknown as Workbench.Task<unknown>,
+      work,
+      workload,
+    );
   });
   it('rejects new tasks after work disposal', async () => {
     const work = workbench.work(workload);
