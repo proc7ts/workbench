@@ -24,6 +24,7 @@
     "types": "./dist/workbench.d.ts",
     "default": "./dist/workbench.js"
   },
+  "sideEffects": false,
   "dependencies": {
     "@proc7ts/primitives": "^3.0.2",
     "@proc7ts/supply": "^1.2.3"
