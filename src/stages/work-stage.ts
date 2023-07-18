@@ -96,11 +96,13 @@ class WorkStageRunner {
       taskPromise.catch(noop),
     ]));
 
-    taskDone.finally(() => {
-      if (taskDone === this._whenTaskDone) {
-        this._end(taskDone);
-      }
-    });
+    taskDone
+      .finally(() => {
+        if (taskDone === this._whenTaskDone) {
+          this._end(taskDone);
+        }
+      })
+      .catch(noop);
   }
 
   private _start(work: WorkStage.Work): Promise<unknown> {
